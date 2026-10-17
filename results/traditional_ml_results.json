@@ -1,0 +1,80 @@
+{
+  "selected_model": "Gradient Boosting (HGB)",
+  "threshold": 0.5716195148043179,
+  "test_metrics_selected": {
+    "roc_auc": 0.8916399076938184,
+    "pr_auc": 0.7658398642325497,
+    "f1": 0.7124405166553365,
+    "precision": 0.6774402068519716,
+    "recall": 0.7512544802867384,
+    "accuracy": 0.8323092170465808,
+    "balanced_acc": 0.8072710757598076
+  },
+  "test_metrics_all": {
+    "Logistic Regression": {
+      "roc_auc": 0.8775153925467668,
+      "pr_auc": 0.7187126103859002,
+      "f1": 0.6946031746031746,
+      "precision": 0.6233618233618233,
+      "recall": 0.7842293906810036,
+      "accuracy": 0.8093161546085232,
+      "balanced_acc": 0.8015667501350223
+    },
+    "Random Forest": {
+      "roc_auc": 0.8898402317474348,
+      "pr_auc": 0.763113523564,
+      "f1": 0.7089397089397089,
+      "precision": 0.6861167002012073,
+      "recall": 0.7333333333333333,
+      "accuracy": 0.8334985133795837,
+      "balanced_acc": 0.8025570776255708
+    },
+    "Gradient Boosting (HGB) \u2605 (tuned threshold)": {
+      "roc_auc": 0.8916399076938184,
+      "pr_auc": 0.7658398642325497,
+      "f1": 0.7124405166553365,
+      "precision": 0.6774402068519716,
+      "recall": 0.7512544802867384,
+      "accuracy": 0.8323092170465808,
+      "balanced_acc": 0.8072710757598076
+    },
+    "SVM (RBF)": {
+      "roc_auc": 0.8858545686649973,
+      "pr_auc": 0.7247408477092523,
+      "f1": 0.7144215530903328,
+      "precision": 0.6403409090909091,
+      "recall": 0.8078853046594983,
+      "accuracy": 0.8214073339940535,
+      "balanced_acc": 0.8172303235626258
+    }
+  },
+  "val_auc_tuned": {
+    "Logistic Regression": 0.8803545136254899,
+    "Random Forest": 0.8924205825404466,
+    "Gradient Boosting (HGB)": 0.8928484363251911,
+    "SVM (RBF)": 0.8889731765779711
+  },
+  "best_params": {
+    "Logistic Regression": {
+      "model__C": 1.2357483710912178,
+      "model__l1_ratio": 1
+    },
+    "Random Forest": {
+      "model__n_estimators": 600,
+      "model__min_samples_leaf": 1,
+      "model__max_features": "sqrt",
+      "model__max_depth": 24
+    },
+    "Gradient Boosting (HGB)": {
+      "model__l2_regularization": 0.0774211647399625,
+      "model__learning_rate": 0.027649274676728182,
+      "model__max_iter": 600,
+      "model__max_leaf_nodes": 63,
+      "model__min_samples_leaf": 10
+    },
+    "SVM (RBF)": {
+      "model__C": 1,
+      "model__gamma": 0.03
+    }
+  }
+}
