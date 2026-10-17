@@ -1,0 +1,16 @@
+# NISR microdata is licensed and must NOT be pushed to GitHub
+data/raw/
+data/processed/
+*.dta
+*.sav
+*.zip
+
+# Saved models are shared via Google Drive instead
+models/
+
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
+
+# Row-level predictions contain survey plot/farmer IDs; keep them local
+results/*predictions*.csv
