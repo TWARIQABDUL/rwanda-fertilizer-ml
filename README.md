@@ -2,13 +2,13 @@
 
 Machine Learning module, summative project: a comparison of traditional machine learning (scikit-learn) and deep learning (TensorFlow/Keras) for a binary classification task built on Rwanda's national agricultural survey.
 
+**Author:** Twariki Abdalazizi, African Leadership University
+
 > **Links:** Report: _add link_ · Google Drive (models): _add link_ · Video: _add link_
 
 ## Problem
 
-<!-- Write 3–4 sentences in your own words: why fertilizer adoption matters for Rwanda,
-     who would use this model (e.g., RAB extension officers, MINAGRI subsidy programmes),
-     and what the model predicts. -->
+Mineral fertilizer helps improve crop yields, and Rwanda has promoted it since 2007 through the Crop Intensification Programme. Even so, fertilizer use still varies widely: in 2020 only 27.6% of plots used inorganic fertilizer, ranging from about 10% in some districts to 59% in Nyabihu. A model that predicts which plots are likely to receive fertilizer could help the Ministry of Agriculture and Animal Resources (MINAGRI) and the Rwanda Agriculture and Animal Resources Development Board (RAB) see where extension services and other support may be most needed.
 
 **Task:** given the location, farmer and practice characteristics of a farm plot in a season, predict whether inorganic (mineral) fertilizer was applied to the plot.
 
@@ -43,9 +43,13 @@ Machine Learning module, summative project: a comparison of traditional machine 
 
 ## How to run
 
+TensorFlow does not yet support very new Python versions, so use Python 3.11 (for example with conda):
+
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/TWARIQABDUL/rwanda-fertilizer-ml.git
 cd rwanda-fertilizer-ml
+conda create -n rwanda-ml python=3.11 -y
+conda activate rwanda-ml
 pip install -r requirements.txt
 # place the NISR data in data/raw/Datasets/STATA/ (see above)
 jupyter notebook notebooks/01_data_preparation_and_eda.ipynb
@@ -73,7 +77,7 @@ Test set: 5,045 plots from farmers never seen in training. Thresholds were tuned
 
 The network's ROC-AUC advantage over Gradient Boosting is +0.005 (95% paired-bootstrap CI +0.002 to +0.009).
 
-<!-- Add 2–3 sentences in your own words: what this means and which model you recommend. -->
+Both approaches reach a test ROC-AUC of about 0.90, so the neural network's advantage is real but small. The two models agree on 94.2% of test plots and are both wrong on the same 681, which suggests the main limit is information missing from the survey (prices, credit, extension visits) rather than model choice. Crop type, farming practices and location carry most of the signal, while farmer demographics add very little. For targeting support, Gradient Boosting is the more practical starting point: it trains about three times faster and finds more fertilizer-using plots (recall 0.751 vs 0.729), while the neural network gives fewer false alarms.
 
 ## Saved models (Google Drive)
 
